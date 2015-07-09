@@ -12,7 +12,7 @@ class unionpaySDK{
 	function __construct(){
 		$this->sign_cert_path = dirname(__FILE__).DIRECTORY_SEPARATOR.'duobao96567.pfx';
         $this->encrtpy_cert_path = dirname(__FILE__).DIRECTORY_SEPARATOR;
-		$this->cert_passwd = '406669';
+		$this->cert_passwd = 'xxxxxx';//Ö¤ÊéÃØÔ¿
 	}
 	/**
 	 * Ç©Ãû
