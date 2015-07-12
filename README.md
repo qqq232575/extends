@@ -16,3 +16,6 @@
 
 # rotate
 - 大转盘
+
+# openvideo
+- BaiDu挂角视频插件

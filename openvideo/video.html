@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//h2D XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/h2D/xhtml1-transitional.h2d">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网页右下角弹出视频广告JS代码--16素材网</title>
+<style>
+.float_layer { width: 350px; border: 1px solid #aaaaaa; display:none; background: #000; }
+.float_layer h2 { height: 25px; line-height: 25px; padding-left: 10px; font-size: 14px; color: #333; background: url(images/title_bg.gif) repeat-x; border-bottom: 1px solid #aaaaaa; position: relative; }
+
+.float_layer .min { width: 21px; height: 20px; background: url(images/min.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
+.float_layer .min:hover { background: url(images/min.gif) no-repeat 0 0; }
+
+.float_layer .max { width: 21px; height: 20px; background: url(images/max.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
+.float_layer .max:hover { background: url(images/max.gif) no-repeat 0 0; }
+
+.float_layer .close { width: 21px; height: 20px; background: url(images/close.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 3px; }
+.float_layer .close:hover { background: url(images/close.gif) no-repeat 0 0; }
+
+.float_layer .content { height: 240px; overflow: hidden; font-size: 14px; line-height: 18px; color: #666;  }
+.float_layer .wrap { padding: 10px; }
+</style>
+<script type="text/javascript">
+function miaovAddEvent(oEle, sEventName, fnHandler)
+{
+	if(oEle.attachEvent)
+	{
+		oEle.attachEvent('on'+sEventName, fnHandler);
+	}
+	else
+	{
+		oEle.addEventListener(sEventName, fnHandler, false);
+	}
+}
+
+window.onload = function() {
+    var oDiv = document.getElementById('miaov_float_layer');
+    var oBtnMin = document.getElementById('btn_min');
+    var oBtnClose = document.getElementById('btn_close');
+    var oDivContent = oDiv.getElementsByTagName('div')[0];
+
+    var iMaxHeight = 0;
+
+    var isIE6 = window.navigator.userAgent.match(/MSIE 6/ig) && !window.navigator.userAgent.match(/MSIE 7|8/ig);
+
+    oDiv.style.display = 'block';
+    iMaxHeight = oDivContent.offsetHeight;
+
+    if (isIE6) {
+        oDiv.style.position = 'absolute';
+        repositionAbsolute();
+        miaovAddEvent(window, 'scroll', repositionAbsolute);
+        miaovAddEvent(window, 'resize', repositionAbsolute);
+    }
+    else {
+        oDiv.style.position = 'fixed';
+        repositionFixed();
+        miaovAddEvent(window, 'resize', repositionFixed);
+    }
+
+    oBtnMin.timer = null;
+    oBtnMin.isMax = true;
+    oBtnMin.onclick = function() {
+        startMove
+		(
+			oDivContent, (this.isMax = !this.isMax) ? iMaxHeight : 0,
+			function() {
+			    oBtnMin.className = oBtnMin.className == 'min' ? 'max' : 'min';
+			}
+		);
+    };
+
+    oBtnClose.onclick = function() {
+        oDiv.style.display = 'none';
+        oDiv.innerHTML = "";
+    };
+};
+
+function startMove(obj, iTarget, fnCallBackEnd)
+{
+	if(obj.timer)
+	{
+		clearInterval(obj.timer);
+	}
+	obj.timer=setInterval
+	(
+		function ()
+		{
+			doMove(obj, iTarget, fnCallBackEnd);
+		},30
+	);
+}
+
+function doMove(obj, iTarget, fnCallBackEnd)
+{
+	var iSpeed=(iTarget-obj.offsetHeight)/8;
+	
+	if(obj.offsetHeight==iTarget)
+	{
+		clearInterval(obj.timer);
+		obj.timer=null;
+		if(fnCallBackEnd)
+		{
+			fnCallBackEnd();
+		}
+	}
+	else
+	{
+		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+		obj.style.height=obj.offsetHeight+iSpeed+'px';
+		
+		((window.navigator.userAgent.match(/MSIE 6/ig) && window.navigator.userAgent.match(/MSIE 6/ig).length==2)?repositionAbsolute:repositionFixed)()
+	}
+}
+
+function repositionAbsolute()
+{
+	var oDiv=document.getElementById('miaov_float_layer');
+	var left=document.body.scrollLeft||document.documentElement.scrollLeft;
+	var top=document.body.scrollTop||document.documentElement.scrollTop;
+	var width=document.documentElement.clientWidth;
+	var height=document.documentElement.clientHeight;
+	
+	oDiv.style.left=left+width-oDiv.offsetWidth+'px';
+	oDiv.style.top=top+height-oDiv.offsetHeight+'px';
+}
+
+function repositionFixed()
+{
+	var oDiv=document.getElementById('miaov_float_layer');
+	var width=document.documentElement.clientWidth;
+	var height=document.documentElement.clientHeight;
+	
+	oDiv.style.left=width-oDiv.offsetWidth+'px';
+	oDiv.style.top=height-oDiv.offsetHeight+'px';
+}
+
+</script>
+</head>
+
+<body style=" background:#666">
+<br><br>
+
+
+
+
+<div class="float_layer" id="miaov_float_layer">
+    <h2>
+        <strong>视频播放</strong>
+        <a id="btn_min" href="javascript:;" class="min"></a>
+        <a id="btn_close" href="javascript:;" class="close"></a>
+    </h2>
+    <div class="content">
+<div class="wrap">
+                               <object type="application/x-shockwave-flash" data="vcastr3.swf" width="330" height="240"
+                    plugspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                    id="vcastr3">
+                    <param name="movie" value="vcastr3.swf" />
+                    <param name="allowFullScreen" value="true" />
+                    <embed width="330px" height="240px" src="vcastr3.swf" quality="autohigh" wmode="transparent"
+                        type="application/x-shockwave-flash" allowfullscreen="true" plugspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+                </object>
+</div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
