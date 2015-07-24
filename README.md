@@ -19,3 +19,6 @@
 
 # openvideo
 - BaiDu挂角视频插件
+
+# erweima
+- 自动生成二维码
