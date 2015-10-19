@@ -1,0 +1,483 @@
+/* mian 兼容*/
+body {
+	background-color: #F6F6F6;
+	font-family: 'Open Sans';
+	font-size: 62.5%;
+	color: #333;
+	-webkit-text-size-adjust: none;
+	line-height: 1.5;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td, textarea, input { 
+	font-family: 'Open Sans'; 
+	font-weight: normal; 
+	padding: 0;
+	margin: 0;
+}
+p{
+	margin: 0;
+}
+a, a:link, a:active, a:visited, a:hover{
+	color: #233241;
+	text-decoration: none;
+}
+pre{
+	font-size: 12px;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+/* header 头部*/
+#header{
+	background: #FFFFFF;
+	font-size: 18px;
+	font-weight: bold;
+	color: #0881D7;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+}
+#header .left{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 40px;
+	width: 40px;
+}
+#header .left a{
+	display: block;
+
+}
+#header .left .back{
+	display: block;
+	width: 11px;
+	height: 20px;
+	margin: 10px auto 0 auto;
+	background: url(../image/back.png) no-repeat;
+}
+/* nav 导航链接*/
+#nav{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #FFF;
+	height: 48px;
+	width: 100%;
+	color: #0881D7;
+	text-align: center;
+	border-top: 1px solid #CCC;
+	z-index: 5000;
+}
+#nav ul li{
+	float: left;
+	height: 48px;
+	width: 25%;
+}
+#nav ul li a{
+	display: block;
+	height: 48px;
+}
+#nav ul li a i{
+	display: block;
+	height: 24px;
+	width: 24px;
+	margin: 3px auto auto;
+}
+#nav ul li a .nav-1{
+	background: url(../image/home-a.png) no-repeat;
+	background-size: 24px 24px;
+}
+#nav ul li a .nav-2{
+	background: url(../image/booking-a.png) no-repeat;
+	background-size: 24px 24px;
+}
+#nav ul li a .nav-3{
+	background: url(../image/custom-a.png) no-repeat;
+	background-size: 24px 24px;
+}
+#nav ul li a .nav-4{
+	background: url(../image/side-b.png) no-repeat;
+	background-size: 24px 24px;
+}
+#nav ul li .nav-on{
+	color: #047CD8; 
+}
+.no-foot{
+	height: 48px;
+}
+/* content 内容部分*/
+#section{
+	margin: 7px;
+}
+/* option 切换部分*/
+.option{
+	margin: 5px 2px;
+	height: 20px;
+}
+.option ul li .op-l{
+	border-radius: 5px 0 0 5px;
+}
+.option ul li .op-r{
+	border-radius: 0 5px 5px 0;
+}
+.option ul li a{
+	float: left;
+	width: 31%;
+	text-align: center;
+	background: #FFF;
+	color: #047CD8;
+	border: 1px solid #047CD8;
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+}
+.option ul li .op-on{
+	background: #047CD8;
+	color: #FFF;
+}
+.option ul li .form-s{
+	height: 22px;
+	width: 31%;
+	margin-left: 4%;
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	padding-left: 10px;
+	border-radius: 3px;
+	line-height: 20px;
+	border: 1px solid #047CD8;
+}
+.option ul li .form-s option{
+	width: 31%;
+}
+.option ul li .form-s o{
+	float: right;
+	margin: 6px 5px auto auto;
+}
+.content{
+	background: #FFF;
+	border-radius: 5px;
+	display: block;
+	border: 1px solid #CCC;
+}
+.content .content-t{
+	border-bottom: 1px solid #CCC;
+	margin: 8px 8px;
+	padding-bottom: 8px;
+	display: block;
+	overflow: hidden;
+}
+.content .content-t img{
+	float: left;
+	width: 30%;
+}
+.content .content-t span{
+	float: left;
+	font-size: 14px;
+	width: 65%;
+	padding: 7px;
+}
+.content .content-l{
+	border-bottom: 1px solid #CCC;
+	padding: 8px 8px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+.content .content-l>img{
+	float: left;
+	width: 20%;
+	margin-right: 8px;
+}
+.content .content-l div{
+	float: left;
+	display: inline;
+}
+.c-l-1{
+	font-size: 14px;
+	font-weight: bold;
+}
+.c-l-2{
+	color: #CCC;
+}
+.c-l-3{
+	color: #047CD8;
+}
+.content .content-l .con-click{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 8px;
+}
+.content .content-l .con-click a img{
+	width: 25px;
+	height: 25px;
+}
+/* side */
+#side1_1{
+	position: fixed;
+	z-index: 900;
+	background: #FFF;
+	width: 210px;
+	height: 110px;
+	left: 50%;
+	padding: 10px;
+	margin-left: -105px;
+	border-radius: 5px;
+}
+#side1_1 h1{
+	text-align: center;
+	font-weight: bold;
+	line-height: 25px;
+}
+/* side-store-n */
+#section .store-n h1{
+	font-size: 15px;
+	line-height: 33px;
+	padding-left: 13px;
+	margin-bottom: 9px;
+	color: #047Cd8;
+	border-bottom: 1px solid #CCC;
+}
+#section .store-n i,#section .store-j i{
+	float: left;
+	width: 6px;
+	height: 20px;
+	border-left: 7px solid #047Cd8;
+}
+#section .store-n h2,#section .store-j h2{
+	color: #000;
+	font-weight: bold;
+	margin-left: 13px;
+}
+.s{
+	margin:4px 0 0 13px;
+	overflow: hidden;
+}
+.s a{
+	color: #047Cd8;
+}
+#section .store-n p{
+	color: #CCC;
+	line-height: 25px;
+}
+#section .store-n p>span{
+	margin-right: 4px;
+	display: inline;
+}
+#section .store-n .span-t{
+	font-size: 14px;
+	display: inherit;
+}
+#section .store-n a{
+	display: inherit;
+	color: #047Cd8;
+	font-size: 15px;
+	text-align: center;
+}
+#section .store-j{
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+.sl{
+	margin:4px 0 0 13px;
+	overflow: hidden;
+}
+.sl img{
+	float: left;
+	width: 20%;
+	margin: 5px 5px 0 0;
+}
+.sl a{
+	float: left;
+	color: #047Cd8;
+}
+.sl h3{
+	font-weight: bold;
+	display: block;
+	float: left;
+}
+.sl p{
+	float: right;
+}
+.sl span{
+	float: left;
+	display: block;
+	  margin-right: 8px;
+}
+.click-l .a-l{
+	display: inherit;
+	color: #047Cd8;
+	font-size: 15px;
+	position: absolute;
+	margin-left: -40px;
+	left: 50%;
+}
+.click-l .a-r{
+	position: absolute;
+	font-size: 14px;
+	right: 20px;
+	line-height: 23px;
+	height: 23px;
+	width: 60px;
+	text-align: center;
+	color: #FFF;
+	background: #3FA5F4;
+	border-radius: 5px;
+}
+
+
+/* voice */
+#voice,#con{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: #0881D7;
+	text-align: center;
+}
+#voice{
+	background: #FFF;
+	height: 48px;
+	border-top: 1px solid #CCC;
+	z-index: 5000;
+}
+#con{
+	height: 39px;
+	z-index: 5001;
+	padding-top: 9px;
+}
+#talk{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	background: #FFF;
+	height: 48px;
+	width: 75px;
+}
+#voice form{
+	height: 30px;
+	margin-top: 9px;
+}
+#voice form .v-1{
+	width: 30px;
+	height: 30px;
+	background: url(../image/chat-w.jpg) no-repeat;
+	background-size: 30px 30px;
+	border: none;
+	  border: 0px solid #83B8FF;
+	float: left;
+	margin-left: 9px;
+	border-radius: 8px;
+}
+#con .v-6{
+	width: 30px;
+	height: 30px;
+	background: url(../image/chat-t.jpg) no-repeat;
+	background-size: 30px 30px;
+	border: none;
+	border: 0px solid #83B8FF;
+	float: left;
+	margin-left: 9px;
+	border-radius: 8px;
+}
+#voice form .v-2{
+	width: 60%;
+	height: 30px;
+ 	background: url(../image/chat-x.jpg) no-repeat 96%;
+ 	background-size: 20px 20px;
+ 	border: 1px solid #CCC;
+ 	border-radius: 8px;
+ 	padding-left: 10px;
+ 	padding-right: 30px;
+ 	box-sizing: border-box;
+}
+#con .v-7{
+	width: 60%;
+	height: 30px;
+ 	border: 1px solid #CCC;
+ 	background: #F7F7F4;
+ 	border-radius: 8px;
+ 	text-align: center;
+ 	line-height: 30px;
+ 	color: #83B8FF;
+ 	font-weight: bold;
+ 	margin-right: 74px;
+}
+#voice form .v-3,#voice form .v-4{
+	width: 30px;
+	height: 30px;
+	border: none;
+	border: 0px solid #83B8FF;
+	float: right;
+	border-radius: 8px;
+}
+#voice form .v-3{
+	background: url(../image/chat-h.jpg);
+	background-size: 30px 30px;
+	margin-right: 5px;
+}
+#voice form .v-4{
+	background: url(../image/chat-j.jpg);
+	background-size: 30px 30px;
+	margin-right: 9px;
+}
+
+#talk input{
+	width: 60px;
+	height: 30px;
+	border: 0px;
+	margin: 9px 6px 0 0;
+	background: #30DA1D;
+	color: #FFF;
+	border-radius: 6px;
+}
+
+
+section .wechat{
+	margin: 4%;
+	font-size: 14px;
+	overflow: hidden;
+}
+.wechat .c-she,.wechat .c-me{
+	float: left;
+	margin-bottom: 5%;
+}
+.wechat .c-she img,.wechat .c-me img{
+	float: left;
+	width: 20%;
+}
+
+.wechat .c-she p,.wechat .c-me p{
+	float: left;
+	width: 65%;
+	background: #FFF;
+	padding: 5px 5px 5px 10px;
+}
+.wechat .c-she i{
+	float: left;
+	width: 0px;
+ 	height: 0px;
+ 	border: 10px solid transparent;
+ 	border-left-color: #F6F6F6;
+ 	border-right-color: #FFF;
+ 	border-top-color: #F6F6F6;
+ 	border-bottom-color: #F6F6F6;
+ 	margin-top: 7px;
+}
+.wechat .c-me i{
+	float: left;
+	width: 0px;
+ 	height: 0px;
+ 	border: 10px solid transparent;
+ 	border-left-color: #FFF;
+ 	border-right-color: #F6F6F6;
+ 	border-top-color: #F6F6F6;
+ 	border-bottom-color: #F6F6F6;
+ 	margin-top: 7px;
+}
